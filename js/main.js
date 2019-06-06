@@ -17,7 +17,6 @@ $(document).ready(function(){
     });
 
     // clears any existing values / placeholders
-<<<<<<< HEAD
     $('#taskNameInput').val('');
     $('#taskDescriptionInput').val('');
     $('#taskCategoryInput').val('');
@@ -26,27 +25,6 @@ $(document).ready(function(){
     $('#taskCategoryInput').attr('placeholder' , 'task category ...');
     $('#dueDateInput').attr('placeholder' , 'due date ...');
     $('#urgentInput').attr('placeholder' , 'is it urgent?');
-=======
-    var placeholder;
-    if ($('#taskNameInput').val()) {
-      $('#taskNameInput').val('');
-    }
-    if ($('#taskDescriptionInput').val()) {
-      $('#taskDescriptionInput').val('');
-    }
-    if ($('#dueDateInput').val()) {
-      $('#dueDateInput').val('');
-    }
-    if ($('#taskCategoryInput').val()) {
-      $('#taskCategoryInput').val('');
-    }
-
-    // $('#taskNameInput').attr('placeholder' , '');
-    // $('#taskDescriptionInput').attr('placeholder' , '');
-    // $('#taskCategoryInput').attr('placeholder' , '');
-    // $('#dueDateInput').attr('placeholder' , '');
-    // $('#urgentInput').attr('placeholder' , '');
->>>>>>> 70c1d7234f8809dcc170bf5c17970cd69d29014d
 
     // user inputs
     $('#dueDateDropdown').children().click(function(){
@@ -67,7 +45,6 @@ $(document).ready(function(){
 
   $('#addTaskConfirmBtn').click(function(){
     var urgent = document.getElementById('urgentInput').getAttribute('placeholder');
-<<<<<<< HEAD
 
     var urgentStatus;
     if (document.getElementById('urgentInput').getAttribute('placeholder') === 'yes (uh-oh)') {
@@ -89,29 +66,6 @@ $(document).ready(function(){
     $('#addTaskOverlay').hide();
   });
 
-=======
-
-    var urgentStatus;
-    if (document.getElementById('urgentInput').getAttribute('placeholder') === 'yes (uh-oh)') {
-      urgentStatus = true;
-    } else {
-      urgentStatus = false;
-    }
-
-    var newTask = {
-      name : ($('#taskNameInput').val()),
-      description : ($('#taskDescriptionInput').val()),
-      dueDate : (document.getElementById('dueDateInput').getAttribute('placeholder')),
-      category: (document.getElementById('taskCategoryInput').getAttribute('placeholder')),
-      urgent : urgentStatus
-    }
-
-    tasks.push(newTask);
-    
-    $('#addTaskOverlay').hide();
-  });
-
->>>>>>> 70c1d7234f8809dcc170bf5c17970cd69d29014d
   $('#viewAllTasksBtn').click(function(){
     $('#viewAllTasksOverlay').show();
 
@@ -132,11 +86,9 @@ $(document).ready(function(){
           urgentClass = 'non-urgent-text'
           urgentText = 'not urgent'
         }
-<<<<<<< HEAD
       // need to get this stuff rendering !
-=======
-        // need to get this stuff rendering !
->>>>>>> 70c1d7234f8809dcc170bf5c17970cd69d29014d
+      // 
+
       taskList.innerHTML += '<div class="row">';
         taskList.innerHTML += '<div class="col-12 mb-1">';
           taskList.innerHTML += '<h4 class="text-light">' + tasks[i].name + '</h4>';
