@@ -1,0 +1,53 @@
+.rounded {
+  /* this is an override of a bootstrap default */
+  border-radius: 2rem !important;
+}
+
+.border-0 {
+  /* this is just a border reset  */
+  border: 0;
+}
+
+.btn-round {
+  border-radius: 0.8rem;
+}
+
+.rounding-override {
+  /* bootstrap wants the last child of a form to have squared-off corners */
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: hsla(208, 7%, 46%, 0.96);
+}
+
+.icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+/* controls svg container */
+#closeButton {
+  height: 4rem;
+  width: 4rem;
+}
+
+/* controls svg appearance */
+.st0 {
+  fill: white;
+  transition: .2s ease-out;
+}
+  .st0:hover{
+    fill: hsla(360, 100%, 100%, 0.5);
+  }
+
+.task-description {
+  height: 5rem;
+}
