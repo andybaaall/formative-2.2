@@ -28,13 +28,19 @@
   background-color: hsla(208, 7%, 46%, 0.96);
 }
 
+.icon-row {
+  position: absolute;
+  left: 90%;
+  z-index: 2;
+}
+
 .icon {
   height: 3rem;
   width: 3rem;
 }
 
 /* controls svg container */
-#closeButton {
+.close-button {
   height: 4rem;
   width: 4rem;
 }
@@ -50,4 +56,12 @@
 
 .task-description {
   height: 5rem;
+}
+
+.urgent-text {
+  color: salmon;
+}
+
+.non-urgent-text {
+  color: lightGreen
 }
