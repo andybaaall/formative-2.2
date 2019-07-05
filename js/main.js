@@ -115,62 +115,69 @@ $(document).ready(function(){
 
   });
 
-  $('.viewDayTasks').click(function(){
+  function showDay(day){
+    $('#viewDayTasksOverlay').show();
 
-    if (this.innerText === 'M'){
-      $('#viewDayTasksOverlay').show();
+    $('#viewDayTasksHeader').html('tasks for ' + day + ':');
 
-      $('.close-button').click(function(){
-        $('#viewDayTasksOverlay').hide();
-      });
+    $('.close-button').click(function(){
+      $('#viewDayTasksOverlay').hide();
+    });
 
-      $('#viewDayTasksHeader').html('tasks for Monday:');
+    document.getElementById('viewDayTasksItems').innerHTML = '';
 
-      document.getElementById('viewDayTasksItems').innerHTML = '';
+    for (var i = 0; i < tasks.length; i++) {
 
-      for (var i = 0; i < tasks.length; i++) {
+      var urgentClass;
+      var urgentText;
+        if (tasks[i].urgent === true) {
+          urgentClass = 'urgent-text';
+          urgentText = 'urgent!'
+        } else {
+          urgentClass = 'non-urgent-text'
+          urgentText = 'not urgent'
+        }
 
-        var urgentClass;
-        var urgentText;
-          if (tasks[i].urgent === true) {
-            urgentClass = 'urgent-text';
-            urgentText = 'urgent!'
-          } else {
-            urgentClass = 'non-urgent-text'
-            urgentText = 'not urgent'
-          }
+      var taskList = '<div class="row">';
+        taskList += '<div class="col-12 mb-1">';
+          taskList += '<h4 class="text-light">' + tasks[i].name + '</h4>';
+        taskList += '</div>';
+      taskList += '</div>';
 
-        var mondayItem;
-          if (tasks[i].dueDate === 'Monday'){
-            mondayItem = 'monday item';
-          }
+      taskList += '<div class="row mb-1">';
+        taskList += '<div class="col-8">';
+          taskList += '<p class="text-light"> ' + tasks[i].description + '</p>'
+        taskList += '</div>';
+      taskList += '</div>';
 
-        document.getElementById('viewDayTasksItems').innerHTML += mondayItem;
-        // need to turn 'monday item' into html. 
+      taskList += '<div class="row mb-1">';
+        taskList += '<div class="col-8">';
+          taskList += '<p class="text-light">due ' + tasks[i].dueDate + '</p>';
+        taskList += '</div>';
+      taskList += '</div>';
 
-      }
-    } else if (this.innerText === 'T'){
-      console.log('got a tues click');
-    } else if (this.innerText === 'W'){
-      console.log('got a wed click');
-    } else if (this.innerText === 'T'){
-      console.log('got a thurs click');
-    } else if (this.innerText === 'F'){
-      console.log('got a fri click');
+      taskList += '<div class="row mb-1">';
+        taskList += '<div class="col-8">';
+          taskList += '<p class="text-light">' + tasks[i].category + '</p>'
+        taskList += '</div>';
+      taskList += '</div>';
+
+      taskList += '<div class="row mb-3">';
+        taskList += '<div class="col-8">';
+          taskList += '<p class="' +  urgentClass + '">this task is ' +  urgentText + '</p>'
+        taskList += '</div>';
+      taskList += '</div>';
+
+    document.getElementById('viewDayTasksItems').innerHTML += taskList ;
+
     }
 
 
+  }
 
-
-
-
-
-
-
-
-
+  $('#mondayBtn').click(function(){
+    showDay('Monday');
   });
-
 
 
 

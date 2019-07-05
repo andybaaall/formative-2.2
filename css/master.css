@@ -65,3 +65,8 @@
 .non-urgent-text {
   color: lightGreen
 }
+
+strong {
+  /* this is an override to get tasks.dueDate appearing on the same line as the string 'due'*/
+  display: inline;
+}
